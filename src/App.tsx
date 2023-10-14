@@ -115,10 +115,31 @@ export default function App() {
 
       <section className="contact-section">
         <h2>Get in touch with me</h2>
-        <p>I'm available for freelancing and remote job. If you need to make website or web application, I'm always ready to help.</p>
+        <p>
+          I'm available for freelancing and remote job. If you need to make
+          website or web application, I'm always ready to help.
+        </p>
         <p>Just let me know when you need me.</p>
 
-        {/* TODO: Make form that send email to me and send one to user's as feedback */}
+        <div className="contact-form">
+          <form>
+            <input
+              type="email"
+              required
+              className="text-input"
+              placeholder="Your E-mail"
+            />
+            <input
+              type="text"
+              required
+              className="text-input"
+              placeholder="Subject"
+            />
+            <textarea className="textarea-input" placeholder="Your message"></textarea>
+
+            <button type="submit">Send</button>
+          </form>
+        </div>
       </section>
     </main>
   );

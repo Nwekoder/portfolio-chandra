@@ -59,6 +59,19 @@ export default function App() {
           <SkillCard percentage={41} title="Android Development" />
         </div>
       </section>
+
+      <section className="contact-section">
+        <h2>Get in touch with me!</h2>
+        <p>
+          If you need help in making Website or wanna build an Web Application, I'll always open to help.
+        </p>
+
+        <div className="contact-container">
+          <div className="contact">
+            
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

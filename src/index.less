@@ -5,6 +5,20 @@
 @accent-color: #0e9bea;
 @text-color: #f1f5f9;
 
+// Mobile Breakpoints
+@bp-mobile-xs: 320px;
+@bp-mobile-sm: 360px;
+@bp-mobile-md: 480px;
+@bp-mobile-lg: 720px;
+@bp-mobile-xl: 1280px;
+
+// Desktop Breakpoints
+@bp-desktop-xs: 720px;
+@bp-desktop-sm: 1280px;
+@bp-desktop-md: 1366px;
+@bp-desktop-lg: 1440px;
+@bp-desktop-xl: 1920px;
+
 *,
 *::after,
 *::before {
@@ -17,6 +31,14 @@ body {
   background-color: @primary-color;
   color: @text-color;
   font-family: "Montserrat", sans-serif;
+  position: relative;
+
+  @media (min-width: 480px) {
+    & {
+      width: 80%;
+      margin-inline: auto;
+    }
+  }
 }
 
 .absolute {
@@ -32,6 +54,12 @@ body {
   width: 75%;
   z-index: -1;
   opacity: 60%;
+
+  @media (min-width: 480px) {
+    & {
+      width: 25%;
+    }
+  }
 
   &:after {
     content: "";
@@ -54,6 +82,12 @@ header {
   h1 {
     font-size: 36px;
 
+    @media (min-width: 480px) {
+      & {
+        font-size: 96px;
+      }
+    }
+
     .passion {
       color: @accent-color;
     }
@@ -75,9 +109,75 @@ header {
   p {
     line-height: 1.475;
   }
+
+  @media (min-width: 480px) {
+    h2 {
+      font-size: 48px;
+    }
+
+    p {
+      max-width: 80ch;
+    }
+  }
 }
 
 .skills-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 18px;
+  overflow-x: hidden;
+
+  & > h2 {
+    font-size: 32px;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  & > p {
+    line-height: 1.475;
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  @media (min-width: 480px) {
+    & > h2 {
+      font-size: 48px;
+    }
+  }
+  .skill-container {
+    width: 97%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+
+    @media (min-width: 480px) {
+      & {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .skill {
+      background: linear-gradient(
+        45deg,
+        fade(@secondary-color, 45%),
+        fade(@text-color, 15%)
+      );
+      width: 100%;
+      border-radius: 12px;
+      padding: 1rem 0.5rem;
+      display: flex;
+      gap: 1.725rem;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.contact-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -96,24 +196,10 @@ header {
     text-align: center;
     margin-bottom: 36px;
   }
-
-  .skill-container {
-    width: 97%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-
-    .skill {
-      background: linear-gradient(45deg, fade(@secondary-color, 45%), fade(@text-color, 15%));
-      width: 100%;
-      border-radius: 12px;
-      padding: 1rem 0.5rem;
-      display: flex;
-      gap: 1.725rem;
-      flex-direction: column;
-      text-align: center;
-      align-items: center;
-      justify-content: center;
+  
+  @media (min-width: 480px) {
+    & > h2 {
+      font-size: 48px;
     }
   }
 }
